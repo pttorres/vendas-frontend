@@ -4,28 +4,27 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
-import { ListPage } from '../pages/list/list';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
+//Decorator que é uma anotação que tem configurações para alterar minha classe.
+// o que faz da classe um model
 @NgModule({
   declarations: [
     MyApp,
-    HomePage,
-    ListPage
+    HomePage
   ],
-  imports: [
+  imports: [ // modulos basicos da aplicação ionic.
     BrowserModule,
     IonicModule.forRoot(MyApp),
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage,
-    ListPage
+    HomePage
   ],
-  providers: [
+  providers: [// declaração das classes singleton. Executam apenas 1 vez.
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
